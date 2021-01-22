@@ -1,17 +1,23 @@
 # calculator :)
-num_1 = int(input("Plaese enter the first number: "))
-num_2 = int(input("Plaese enter the second number: "))
-operation = input("Please enter math operation: ")
-prog_exit = None
-while prog_exit != 0:
-    if operation == "+":
-        print(f"Result = {num_1 + num_2}")
-    elif operation == "-":
-        print(f"Result = {num_1 - num_2}")
-    elif operation == "*":
-        print(f"Result = {num_1 * num_2}")
-    elif operation == "/":
-        print(f"Result = {num_1 / num_2}")
+sign = '+'
+while sign != '0':
+    num_1 = int(input("Plaese enter the first number: "))
+    num_2 = int(input("Plaese enter the second number: "))
+    sign = input("Please enter math operation: ")
+    if (sign not in '+-/*'):
+        print("Input correct operation")
+        continue
     else:
-        prog_exit = int(input("If you want to exit please enter 0: "))
-# in process....
+        if sign == "+":
+            print(f"Result = {num_1 + num_2}")
+        if sign == "-":
+            print(f"Result = {num_1 - num_2}")
+        if sign == "*":
+            print(f"Result = {num_1 * num_2}")
+        if sign == "/":
+            if num_2 != 0:
+                print(f"Result = {num_1 / num_2}")
+                continue
+            else:
+                print("Devision by zero")
+
