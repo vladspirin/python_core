@@ -6,23 +6,27 @@ my_list = ['apple', 'banana', 'pineapple', 'orange', 'apple', 34, 'python', 'pyt
 for i in my_list:
     if my_list.count(i) == 1:
         print(i)
+
 # 2
 print('# 2')
-my_list2 = [randint(1, 20) for i in range(10)]
-print(my_list2)
-max_elem = max(my_list2)
-print(f'The max element = {max_elem}')
-min_elem = min(my_list2)
-print(f'The min element = {min_elem}')
-max_ind = my_list2.index(max(my_list2))
-min_ind = my_list2.index(min(my_list2))
-my_list2[max_ind], my_list2[min_ind] = my_list2[min_ind], my_list2[max_ind]
-print(my_list2)
+n = int(input("Please input the list length: "))
+numbers = [randint(1, 100) for i in range(n)]
+print(f'Our list: {numbers}')
+max_elem = max(numbers)
+print(f'Max elem = {max_elem}')
+min_elem = min(numbers)
+print(f'Min elem = {min_elem}')
+temp = numbers[numbers.index(min_elem)]
+numbers[numbers.index(min_elem)] = numbers[numbers.index(max_elem)]
+numbers[numbers.index(max_elem)] = temp
+print(f'Our new list: {numbers}')
 
 # 3
-# print('# 3')
-# my_list3 = [3, 12, 27, 3, 14, 5, 8, 5, 12, 3, 84, 2]
-# print(my_list3)
-# for i in my_list3:
-#     print(my_list3.count(i))
-
+print('# 3')
+length = int(input("Please input the list length: "))
+num = [randint(1, 10) for i in range(length)]
+print(num)
+counts = []
+for item in num:
+    counts.append(num.count(item))
+print(f'The most common number is {num[counts.index(max(counts))]}')
