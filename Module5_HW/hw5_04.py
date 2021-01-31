@@ -1,5 +1,5 @@
-length = int(input('Input side length: '))
-height = int(input('Input side height: '))
+height = int(input('Input the side A: '))
+length = int(input('Input the side B: '))
 for i in range(length):
     if i == 0 or i == length - 1:
         for j in range(height):
