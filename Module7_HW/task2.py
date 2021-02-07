@@ -2,6 +2,7 @@ from math import pi
 
 
 def square_figure(str_numbers):
+    """Function to calculate the square of figure"""
     list_numbers = str_numbers.split()
     for i in range(len(list_numbers)):
         list_numbers[i] = float(list_numbers[i])
