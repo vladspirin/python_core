@@ -1,8 +1,17 @@
-# Для чисел, що вводяться користувачем, визначити відсоток додатних та від’ємних чисел.
-# При введенні числа 0 закінчити роботу.
+counter = 0
+positive_num = 0
+negative_num = 0
 
-n = int(input("How many numbers you want to input? "))
-count = 0
-# for i in range(n):
-#     numbers = int(input("Please input your number: "))
-#     if numbers
+while True:
+    numbers = int(input("Input your number or type 0 to exit: "))
+    if numbers == 0:
+        break
+    if numbers > 0:
+        positive_num += 1
+        counter += 1
+    if numbers < 0:
+        negative_num += 1
+        counter += 1
+print("All numbers %d " % counter)
+print("Positive numbers %d" % (positive_num * 100 / counter), "%")
+print("Negative numbers %d" % (negative_num * 100 / counter), "%")
