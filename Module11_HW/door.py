@@ -1,4 +1,6 @@
 class Door:
+    status = 'undefined'
+
     def __init__(self, number, status, lock):
         self.number = number
         self.status = status
@@ -20,6 +22,10 @@ class Door:
     def unLock(self):
         """Door unlocked"""
         self.lock = 'unlocked'
+
+    @classmethod
+    def knock(cls):
+        print("Knock!")
 
 
 door1 = Door(1, 'closed', 'unlocked')
@@ -78,3 +84,6 @@ tdoors1 = ToggleDoor(1, 'opened')
 print(tdoors1.status)
 tdoors1.toggle()
 print(tdoors1.status)
+
+door1 = Door(1, 'closed', 'locked')
+door1.knock()
